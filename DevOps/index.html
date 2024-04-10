@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Job Application Signup</title>
+</head>
+<body>
+    <header>
+        <h1>Job Application Signup</h1>
+    </header>
+
+    <main class="flex align-items-center justify-content-center">
+        <section id="auth" class="flex direction-column">
+            <!-- Signup Form -->
+            <div class="panel register flex direction-column">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <label for="signupUsername" class="sr-only">Username</label>
+                    <input type="text" id="signupUsername" name="signupUsername" placeholder="Username" required>
+
+                    <label for="signupEmail" class="sr-only">Email</label>
+                    <input type="email" id="signupEmail" name="signupEmail" placeholder="example: username@gmail.com" pattern="[a-z]+@[a-z]+\.[a-z]{2,4}" required>
+
+                    <label for="signupPassword" class="sr-only">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" placeholder="Password" required>
+
+                    <label for="signupMobile" class="sr-only">Mobile Number</label>
+                    <input type="tel" id="signupMobile" name="signupMobile" placeholder="Mobile Number" maxlength="10" required>
+
+                    <label for="signupDOB" class="sr-only">Date of Birth</label>
+                    <input type="date" id="signupDOB" name="signupDOB" placeholder="Date of Birth" required>
+
+                    <p>Gender:</p>
+                    <label for="male">
+                        <input type="radio" id="male" name="gender" value="male" required> Male
+                    </label>
+                    <label for="female">
+                        <input type="radio" id="female" name="gender" value="female"> Female
+                    </label>
+
+                    <label for="cvUpload" class="sr-only">Upload Your CV</label>
+                    <input type="file" id="cvUpload" name="cvUpload" accept=".pdf,.doc,.docx" required>
+
+                    <div id="educationFields"></div> <!-- Container for education fields -->
+
+                    <button type="button" onclick="addEducation()">+ Add Education</button>
+                    <button type="button" onclick="undoAddEducation()">Undo</button>
+                    
+                    <button type="button" onclick="handleSignup()">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Application. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let educationHistory = [];
+
+        function addEducation() {
+            const educationFieldsContainer = document.getElementById('educationFields');
+            const educationField = document.createElement('div');
+            educationField.classList.add('educationFieldsSet');
+            educationField.innerHTML = `
+                <hr>
+                <label for="educationName">Name of College/School</label>
+                <input type="text" id="educationName" name="educationName" placeholder="Enter Name of College/School" required>
+
+                <label for="graduationYear">Year of Graduation</label>
+                <input type="number" id="graduationYear" name="graduationYear" placeholder="Enter Year of Graduation" required>
+
+                <label for="marksPercentage">Marks in %</label>
+                <input type="number" id="marksPercentage" name="marksPercentage" placeholder="Enter Marks in %" required>
+            `;
+            educationFieldsContainer.appendChild(educationField);
+            educationHistory.push(educationField);
+        }
+
+        function removeEducation(element) {
+            const educationFieldsContainer = document.getElementById('educationFields');
+            educationFieldsContainer.removeChild(element.parentNode);
+            educationHistory.pop();
+        }
+
+        function undoAddEducation() {
+            if (educationHistory.length > 0) {
+                const educationFieldsContainer = document.getElementById('educationFields');
+                educationFieldsContainer.removeChild(educationHistory.pop());
+            }
+        }
+
+        function handleSignup() {
+            
+        }
+    </script>
+</body>
+</html>

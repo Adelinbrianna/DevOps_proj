@@ -1,0 +1,101 @@
+/* Basic styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #333;
+}
+
+header nav {
+    display: flex;
+    list-style: none;
+}
+
+header nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Main content styling */
+main {
+    padding: 1rem 2rem;
+}
+
+.user-profile,
+.edit-profile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h2,
+.edit-profile h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+    margin-right: 10px;
+    width: 150px; /* Adjust width as needed */
+}
+
+form input,
+form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    max-width: 300px; /* Reduce the length of the input box */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #808080; /* Grey button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start; /* Align button to the start of the container */
+    width: 150px; /* Set button width */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #000; /* Black button color on hover */
+}
+

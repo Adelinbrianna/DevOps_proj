@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styling */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #f0f0f0;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    header nav {
+      display: flex;
+      list-style: none;
+    }
+
+    header nav a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Main content styling */
+    main {
+      padding: 1rem 2rem;
+    }
+
+    .user-profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .user-profile h2 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .user-details,
+    .user-location,
+    .user-cv,
+    .user-education,
+    .user-drivers-license,
+    .user-employment {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .user-details h3,
+    .user-location h3,
+    .user-cv h3,
+    .user-education h3,
+    .user-drivers-license h3,
+    .user-employment h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Form styling */
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+
+    form label {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    form input,
+    form select {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Profile</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">My Profile</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <div class="user-profile">
+      <h2>My Profile</h2>
+      <a href="eprof.html">Edit Profile</a>
+    </div>
+    <p>Update your details below</p>
+    <div class="user-details">
+      <h3>MY DETAILS</h3>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="Some One">
+        <label for="email">Email address:</label>
+        <input type="email" id="email" value="someone@somewhere.com">
+        <label for="cell number">Cellular Number:</label>
+        <input type="tel" id="cell number" value="0835550000">
+        <label for="id-passport">ID/Passport Number:</label>
+        <input type="text" id="id-passport" value="8001019999085">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option>
+        </select>
+        <label for="DOB">Birth Date</label>
+        <input type="date" id="Birth date" value>
+        </form>
+    </div>
+    </main>
+</body>
+</html>
